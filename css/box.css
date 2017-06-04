@@ -1,0 +1,64 @@
+div.imagebox {
+   //border: 1px dashed #0000cc; /* 1.枠線 */
+   background-color: #BDBDBD;  /* 2.背景色 */
+  width: 150px; /* 横幅 */
+  height: 160px; /* 縦幅 */
+   float: left; /* 左に配置 */
+   margin: 5px; /* 周囲の余白 */
+}
+p.image, p.caption {
+   text-align: center; /* 3.中央寄せ */
+   margin: 3px;        /* 4.余白・間隔 */
+}
+p.caption {
+   font-size: 80%;  /* 5.文字サイズ */
+   color: darkblue; /* 6.文字色 */
+}
+
+
+div.imagebox2 {
+  // border: 1px dashed #0000cc; /* 1.枠線 */
+   background-color: #BDBDBD;  /* 2.背景色 */
+  width: 200px; /* 横幅 */
+  height: 230px; /* 縦幅 */
+   float: left; /* 左に配置 */
+   margin: 5px; /* 周囲の余白 */
+}
+p.image2, p.caption2 {
+   text-align: left; /* 3.中央寄せ */
+   margin: 3px;        /* 4.余白・間隔 */
+}
+p.caption2 {
+   font-size: 80%;  /* 5.文字サイズ */
+   color: darkblue; /* 6.文字色 */
+}
+
+
+/*  ポップアップ  */
+.message {
+    position: relative;
+}
+.message span.remark {
+    display: none;
+}
+.message a:hover span.remark {
+    background: none repeat scroll 0 0 #EEFFEE;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    display: block;
+    line-height: 1.2em;
+    margin: 0.5em;
+    padding: 0.5em;
+    position: absolute;
+    top: 50px;
+    width: 12em;
+}
+
+/*hstory*/
+div.history {
+  width: 300px;
+  height: 250px;
+  background-color: #EEE8AA;
+}
+
+
