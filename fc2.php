@@ -21,7 +21,7 @@
 
 /////////   プレーヤー   /////////////
 
-$url="http://live.fc2.com/embedPlayer/?id=";
+$url="https://live.fc2.com/embedPlayer/?id=";
 $url2='&lang=ja&suggest=1&thumbnail=1&adultaccess=0&afid=31773606" frameborder="0" scrolling="no" autoplay="1"';
 
 
