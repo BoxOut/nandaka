@@ -10,7 +10,7 @@
     <script src="http://fb.me/react-0.13.3.js"></script>
 https://www.youtube.com/channel/UCBHA7pLwHqxk3NCYGT-p1KA
    -->
-   <script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
+   <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
   </head>
   <body style="background-color : #BDBDBD">
 
