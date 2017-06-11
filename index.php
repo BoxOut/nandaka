@@ -237,7 +237,7 @@ var Parent = React.createClass({
       const videos = this.state.list.map( function(data, index){
       
       const video_url="https://www.youtube.com/watch?v=";
-      const  dt_url = "https://nandaka.herokuapp.com/uplist.php#";
+      const  dt_url = "https://nandaka.herokuapp.com/uplist.html#";
 
 
       var img_url=data["snippet"]["thumbnails"]["medium"]["url"],
