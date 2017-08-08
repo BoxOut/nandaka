@@ -44,7 +44,7 @@ echo "<br><br><br><br><br><br><br><br>";
 
 
  
-$url="http://live.fc2.com/contents/allchannellist.php";
+$url="https://live.fc2.com/contents/allchannellist.php";
 
     $json = file_get_contents($url.$_GET["url"]);
     $array=json_decode($json, true);
