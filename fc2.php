@@ -45,8 +45,10 @@ echo "<br><br><br><br><br><br><br><br>";
 
  
 $url="https://live.fc2.com/contents/allchannellist.php";
+$options['ssl']['verify_peer']=false;
+$options['ssl']['verify_peer_name']=false;
 
-    $json = file_get_contents($url.$_GET["url"]);
+    $json = file_get_contents($url.$_GET["url"], false, stream_context_create($options));
     $array=json_decode($json, true);
 //    var_dump($array);
 
