@@ -57,7 +57,6 @@
       else {
         ytPlayer.loadVideoById(list[current_num]['id']['videoId'],0);
       }
-
       function onPlayerStateChange(event){
         if(event.data == YT.PlayerState.ENDED) {
           console.log("video end");
@@ -207,7 +206,7 @@
       const dt_list = this.state.detail_list;
       const videos = this.state.list.map(function(data, index){
         const video_url="https://www.youtube.com/watch?v=";
-        const  dt_url = "http://boxout.angry.jp/uplist.html#";
+        const dt_url = "https://nandaka.herokuapp.com/uplist2.html#";
         var img_url=data["snippet"]["thumbnails"]["medium"]["url"],
           title_o =data["snippet"]["title"],title_cut = title_o,
           detail = <span onClick={self.get_detail} className={data["snippet"]["channelId"]}>detail</span>;
@@ -221,7 +220,7 @@
           <div className={"imagebox2"}>
           <a href={video_url+data['id']['videoId']} target={"_blank"} title={title_o}>
           <p className={"image2"}><img src={img_url} alt="video_thumb"  width={200} height={150}/></p>
-          <p className={"caption2"}>{title_cut}</p></a>{detail}
+          <p className={"caption2"}>{title_cut}</p></a>{detail }
           <span className="play" id={index} onClick={self.playVideo}>play</span>
           </div>
         );
