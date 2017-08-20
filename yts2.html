@@ -209,7 +209,7 @@
         const video_url="https://www.youtube.com/watch?v=";
         const  dt_url = "http://boxout.angry.jp/uplist.html#";
         var img_url=data["snippet"]["thumbnails"]["medium"]["url"],
-          title_o =d ata["snippet"]["title"],title_cut = title_o,
+          title_o =data["snippet"]["title"],title_cut = title_o,
           detail = <span onClick={self.get_detail} className={data["snippet"]["channelId"]}>detail</span>;
         if(title_o.length > 30) title_cut = title_o.slice(0,30);
 
