@@ -40,8 +40,8 @@
               height: 500, // プレーヤーの高さ
               videoId: list[current_num]['snippet']['resourceId']['videoId'],
               events: {
-                      'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
               }
             }
           );
@@ -59,6 +59,7 @@
             current_num = 0;
           }
           setTimeout(function() {
+            console.log(list[current_num]);
             ytPlayer.loadVideoById(list[current_num]['snippet']['resourceId']['videoId'], 0);
           }, time);          
         }
@@ -73,7 +74,7 @@
           event.target.playVideo();
         }
         function onError(event) {
-          console.log("video end");
+          console.log("video error");
           nextVideoProcess();
         }
       }
@@ -89,8 +90,7 @@
 
         componentDidMount: function () {
           console.log("componentDitMount");
-          window.addEventListener('scroll', this.onScroll);
-          this.api_call();
+          window.addEventListener('scroll', this.onScroll);plp
         },
 
         onScroll: function(detail) {
