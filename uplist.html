@@ -68,7 +68,7 @@
           else if(current_num < 0) {
             current_num = list.length - 1
           }
-          console.log(current_num);
+          console.log(current_num,add_value);
           setTimeout(function() {
             console.log(list[current_num]);
             ytPlayer.loadVideoById(list[current_num]['snippet']['resourceId']['videoId'], 0);
