@@ -24,7 +24,7 @@
       var channel = location.hash;
       channel = channel.substr(1,channel.length);
 
-      var list,next_page, add_value = 1;
+      var list,next_page, add_value = 1, current_num = 0;
       var playerFLG=0, play_id =0, got=[];
 
       function reverse_direction() {
@@ -68,7 +68,6 @@
           else if(current_num < 0) {
             current_num = list.length - 1
           }
-          console.log(current_num,add_value);
           setTimeout(function() {
             console.log(list[current_num]);
             ytPlayer.loadVideoById(list[current_num]['snippet']['resourceId']['videoId'], 0);
