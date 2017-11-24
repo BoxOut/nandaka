@@ -8,7 +8,7 @@
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
   </head>
   <body style="background-color : #BDBDBD">
-    <h1>YoutubeAPI</h1>
+    <h1 id="rev_dir" onclick="reverse_direction()">YoutubeAPI</h1>
     <center>
     <p>
     <div id="player"></div>
@@ -24,8 +24,15 @@
       var channel = location.hash;
       channel = channel.substr(1,channel.length);
 
-      var list,next_page ;
+      var list,next_page, add_value = 1;
       var playerFLG=0, play_id =0, got=[];
+
+      function reverse_direction() {
+        add_value *= -1
+        if(add_value < 0) document.getElementById("re_dir").innerHTML = "IPAebutuoY";
+        else document.getElementById("rev_dir").innerHTML = "YoutubeAPI";
+        console.log("reverse_direction");
+      }
 
       function playVideo2(id) {
         console.log("play");
@@ -52,11 +59,15 @@
 
         function nextVideoProcess(){
           var time = 0;
-          if( ++current_num == list.length ){
+          current_num += add_value
+          if( current_num == list.length ){
             if(list["nextPageToken"]){
               time = 2000;
             }
             current_num = 0;
+          }
+          else if(current_num < 0) {
+            current_num = list.length - 1
           }
           setTimeout(function() {
             console.log(list[current_num]);
