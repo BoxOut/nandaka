@@ -11,4 +11,9 @@
 	catch(PDOException $e) {
 	var_dump($e->getMessage());
 	}
+	$sql = "SELECT * FROM test";
+	$res = $pdo_conn->query($sql);
+	foreach( $res as $value ) {
+		echo "$value[name]<br>";
+	}
 ?>
