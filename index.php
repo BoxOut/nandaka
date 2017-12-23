@@ -150,8 +150,7 @@
 
             $.getJSON(
             "https://www.googleapis.com/youtube/v3/search?",
-             param
-              ,
+             param,
               function(data, status) { 
                 console.log(data);
                 list = list ? list.concat(data["items"]):data["items"];

@@ -17,29 +17,31 @@
         getInitialState: function () {
           console.log("getInitialState");
             return {
-              list: [],
               word: "",
-                hst_flag: false,
-                hst_list: ["linux","windows"],
-                detail_list : []
             };
+        },
+        data_func: function(word) {
+            $.ajax({
+                url: 'test.php',
+                type: 'POST',
+                data: word,
+            });
+            .done(function (response) {
+            console.log(response.data)
+        })
         },
         render: function() {
           var on_search = (event) =>{
-             this.setState({word:event.target.value});
-          };
+            this.setState({word:event.target.value});
+          },
           handleKeyPress = (event) => {
             if(event.key == 'Enter'){
-              console.log("enter");
-              this.setState({detail_list : []}); 
-              list=null; got=[],next_page=null;
               search_word=event.target.value;
-              this.setState(prevState => ({ hst_list: prevState.hst_list.concat([search_word]) } ));
-              this.api_call_search();
+              console.log("enter",search_word);
+              this.data_func(search_word);
             }
           };
-          return <div>
-             <p><input type="text" onChange={on_search} value={this.state.word} onKeyPress={handleKeyPress} />;
+          return <div><p><input type="text" onChange={on_search} value={this.state.word} onKeyPress={handleKeyPress}/></p></div>;
         }
       });
       // id='app' に <Parent />を表示する（マウント）
