@@ -25,10 +25,10 @@
                 url: 'test.php',
                 type: 'POST',
                 data: word,
-            });
+            })
             .done(function (response) {
-            console.log(response.data)
-        })
+                console.log(response.data)
+            });
         },
         render: function() {
           var on_search = (event) =>{
