@@ -14,10 +14,20 @@
     <div id="app"></div>
     <script type="text/jsx">
       var Parent = React.createClass({
+        getInitialState: function () {
+          console.log("getInitialState");
+            return {
+              list: [],
+              word: "",
+                hst_flag: false,
+                hst_list: ["linux","windows"],
+                detail_list : []
+            };
+        },
         render: function() {
           var on_search = (event) =>{
              this.setState({word:event.target.value});
-          },
+          };
           handleKeyPress = (event) => {
             if(event.key == 'Enter'){
               console.log("enter");
@@ -30,8 +40,8 @@
           };
           return <div>
              <p><input type="text" onChange={on_search} value={this.state.word} onKeyPress={handleKeyPress} />;
-          }
-        });
+        }
+      });
       // id='app' に <Parent />を表示する（マウント）
       var m = ReactDOM.render(<Parent />, document.getElementById('app'));
     </script>
