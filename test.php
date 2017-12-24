@@ -19,7 +19,4 @@
 
 	$sql = "SELECT * FROM playlist";
 	$res = $pdo->query($sql);
-	foreach( $res as $value ) {
-		echo "$value[name] $value[id] <br>";
-	}
 ?>
