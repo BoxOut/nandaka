@@ -11,9 +11,12 @@
 	catch(PDOException $e) {
 	var_dump($e->getMessage());
 	}
-	echo $_POST['video_id'];
-	$sql_add = 'insert into test VALUES ("efgh", 2323)';
-
+	//echo $_POST['video_id'];
+	$stmt = $pdo->prepare('insert into test VALUES (?, ?)');
+	$stmt->bindValue(1, $_POST['video_id']);
+	$stmt->bindValue(2, $_POST['img_id']);
+	$stmt->execute();
+	
 	$sql = "SELECT * FROM test";
 	$res = $pdo_conn->query($sql);
 	foreach( $res as $value ) {

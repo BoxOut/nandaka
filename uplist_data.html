@@ -94,7 +94,7 @@
         var id = e.currentTarget.getAttribute('value'), 
         video_id = list[id]['snippet']['resourceId']['videoId'];
         video_img_id = list[id]["snippet"]["thumbnails"]["medium"]["url"],
-        add_video_to_db(video_id+" "+video_img_id);
+        add_video_to_db(video_id,video_img_id);
       }
 
       function add_video_to_db(video_id,video_img_id) {
