@@ -91,7 +91,7 @@
       }
 
       function get_list() {
-        $.ajax({
+ {/*       $.ajax({
             url: 'database_handler.php',
             type: 'POST',
             data: {
@@ -100,7 +100,10 @@
         })
         .done(function (response) {
             list = JSON.parse(response);
-        });
+        })
+        .success(function(data, dataType) {
+
+        });*/}
       }
 
        // 親：<Parent />の定義
@@ -114,7 +117,18 @@
 
         componentDidMount: function () {
           console.log("componentDitMount");
-          this.api_call();
+          {/*this.api_call();*/}
+          $.ajax({
+            url: 'database_handler.php',
+            type: 'POST',
+            data: {
+             'op_type': 'get_list'
+            }
+        	})
+        	.done(function (response) {
+              list = JSON.parse(response);
+         	  self.setState({list:list});
+        	});
           window.addEventListener('scroll', this.onScroll);
         },
 
