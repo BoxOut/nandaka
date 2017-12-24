@@ -118,6 +118,7 @@
         componentDidMount: function () {
           console.log("componentDitMount");
           {/*this.api_call();*/}
+          const self = this;
           $.ajax({
             url: 'database_handler.php',
             type: 'POST',
@@ -128,7 +129,7 @@
         	.done(function (response) {
               list = JSON.parse(response);
          	  self.setState({list:list});
-        	});
+          });
           window.addEventListener('scroll', this.onScroll);
         },
 
