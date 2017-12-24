@@ -12,6 +12,8 @@
 	var_dump($e->getMessage());
 	}
 	echo $_POST['video_id'];
+	$sql_add = 'insert into test VALUES ("efgh", 2323)';
+
 	$sql = "SELECT * FROM test";
 	$res = $pdo_conn->query($sql);
 	foreach( $res as $value ) {

@@ -98,16 +98,14 @@
       }
 
       function add_video_to_db(video_id,video_img_id) {
-        console.log("add_video",new_data);
+        console.log("add_video",video_id,video_img_id);
         $.ajax({
             url: 'test.php',
             type: 'POST',
-            dataType: 'json'
-            contentType: 'application/json'
-            data: JSON.stringify(  
-             id: video_id,
-             img_id: video_img_id
-            )
+            data: {
+             'video_id': video_id,
+             'img_id': video_img_id
+            }
         })
         .done(function (response) {
             console.log(response)
