@@ -1,7 +1,7 @@
 <?php
 
 	$dbopts = parse_url(getenv('DATABASE_URL'));
-	header('Content-Type: application/json');
+	// header('Content-Type: application/json');
 
 	try {
 		// 各種パラメータを指定して接続
@@ -21,11 +21,10 @@
 	else {
 		$sql = "SELECT * FROM playlist";
 		$res = $pdo->query($sql);
-		$list = "{";
+		$list = "";
 		foreach ($data as $res) {
-			$list += "$_POST['age']},{$_POST['job']";
+			$list +=  $_POST['video_id']+" "+$_POST['video_title']+" "+$_POST['video_img_id'];
 		}
-		$list += "}";
     	echo json_encode(compact('list'));
 	}
 ?>
