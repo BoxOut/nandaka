@@ -100,6 +100,7 @@
         })
         .done(function (response) {
             console.log(JSON.parse(response));
+            list = response;
         });
       }
 
@@ -115,6 +116,7 @@
         componentDidMount: function () {
           console.log("componentDitMount");
           this.api_call();
+          self.setState({list:list});
           window.addEventListener('scroll', this.onScroll);
         },
 
@@ -145,23 +147,24 @@
           this.setState({list:list});
         },
         render: function() {
-{/*          const self = this;
+          const self = this;
           const videos = this.state.list.map( function(data, index){
+          	
             const video_url="https://www.youtube.com/watch?v=";
-            var img_url=data['video_img'],
-              title_o=data["snippet"]["title"],title_cut = title_o;
+            var img_url="https://i.ytimg.com/vi/+"data['video_id']"+/mqdefault.jpg",
+              title_o=data["video_title"],title_cut = title_o;
             if(title_o.length > 30) title_cut = title_o.slice(0,30);
 
             return (
               <div className={"imagebox2"}>
-              <a href={video_url+data["snippet"]['resourceId']['videoId']} target={"_blank"} title={title_o}>
+              <a href={video_url+data['video_id']} target={"_blank"} title={title_o}>
               <p className={"image2"}><img src={img_url} alt="video_thumb"  width={200} height={150} /></p>
               <p className={"caption2"}>{title_cut}</p></a>
               <div className="play" id={index} onClick={self.playVideo}>play</div>
               </div>
             );
-          });*/}
-          return <h1>abc</h1>;//<div>{videos}</div>;
+          });
+          return <div>{videos}</div>;
         }
       });
       // id='app' に <Parent />を表示する（マウント）
