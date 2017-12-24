@@ -21,11 +21,12 @@
 	else {
 		$sql = "SELECT * FROM playlist";
 		$res = $pdo->query($sql);
+		echo $res;
 		$list = "";
-		foreach ($res as $data) {
-			echo $data;
-			$list +=  $data['video_id']+" "+$data['video_title']+" "+$data['video_img_id']+" ";
-		}
+		// foreach ($res as $data) {
+		// 	echo $data;
+		// 	$list +=  $data['video_id']+" "+$data['video_title']+" "+$data['video_img_id']+" ";
+		// }
     	echo $list
 	}
 ?>
