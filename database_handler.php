@@ -6,7 +6,7 @@
 	try {
 		// 各種パラメータを指定して接続
 		$pdo = new PDO( 'pgsql:host='.$dbopts["host"].'; dbname='.ltrim($dbopts["path"],'/'), $dbopts["user"], $dbopts["pass"] );
-		var_dump("接続に成功しました\n");
+		//var_dump("接続に成功しました\n");
 	}
 	catch(PDOException $e) {
 	var_dump($e->getMessage());
@@ -23,8 +23,8 @@
 		$res = $pdo->query($sql);
 		$list = "";
 		foreach ($data as $res) {
-			$list +=  $_POST['video_id']+" "+$_POST['video_title']+" "+$_POST['video_img_id'];
+			$list +=  $_POST['video_id']+" "+$_POST['video_title']+" "+$_POST['video_img_id']+" ";
 		}
-    	echo json_encode(compact('list'));
+    	echo $list
 	}
 ?>
