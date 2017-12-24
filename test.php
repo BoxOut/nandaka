@@ -12,12 +12,12 @@
 	var_dump($e->getMessage());
 	}
 	echo $_POST['video_id'],$_POST['img_id'];
-	$stmt = $pdo->prepare('insert into test VALUES (?, ?)');
+	$stmt = $pdo->prepare('insert into playlist VALUES (?, ?)');
 	$stmt->bindValue(1, $_POST['video_id']);
 	$stmt->bindValue(2, $_POST['img_id']);
 	$stmt->execute();
 
-	$sql = "SELECT * FROM test";
+	$sql = "SELECT * FROM playlist";
 	$res = $pdo->query($sql);
 	foreach( $res as $value ) {
 		echo "$value[name] $value[id] <br>";
