@@ -24,8 +24,9 @@
 		$list = "";
 		foreach ($res as $data) {
 			// echo "$data[video_title]";
-			$list .=  "$data[video_id] $data[video_title] ";
+			$array[] = array('video_id' => $data[video_id], 'video_title' => $data[video_title]);
+			// $list .=  "$data[video_id] $data[video_title] ";
 		}
-		echo $list;
+		echo json_encode($array);
 	}
 ?>
