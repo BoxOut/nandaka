@@ -11,9 +11,11 @@
 	catch(PDOException $e) {
 	var_dump($e->getMessage());
 	}
+	echo $_POST['video_id'];
 	$sql = "SELECT * FROM test";
 	$res = $pdo_conn->query($sql);
 	foreach( $res as $value ) {
 		echo "$value[name] $value[id] <br>";
 	}
+
 ?>
