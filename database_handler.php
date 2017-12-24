@@ -24,9 +24,9 @@
 		// echo $res;
 		$list = "";
 		foreach ($res as $data) {
-			echo $data;
-			$list +=  "$data[video_title] ";
+			echo "$data[video_title]";
+			// $list +=  "$data[video_title] ";
 		}
-		echo $list;
+		// echo $list;
 	}
 ?>
