@@ -5,20 +5,20 @@
 
 	try {
 		// 各種パラメータを指定して接続
-		$pdo_conn = new PDO( 'pgsql:host='.$dbopts["host"].'; dbname='.ltrim($dbopts["path"],'/'), $dbopts["user"], $dbopts["pass"] );
+		$pdo = new PDO( 'pgsql:host='.$dbopts["host"].'; dbname='.ltrim($dbopts["path"],'/'), $dbopts["user"], $dbopts["pass"] );
 		var_dump("接続に成功しました\n");
 	}
 	catch(PDOException $e) {
 	var_dump($e->getMessage());
 	}
-	//echo $_POST['video_id'];
+	echo $_POST['video_id'],$_POST['img_id'];
 	$stmt = $pdo->prepare('insert into test VALUES (?, ?)');
 	$stmt->bindValue(1, $_POST['video_id']);
 	$stmt->bindValue(2, $_POST['img_id']);
 	$stmt->execute();
-	
+
 	$sql = "SELECT * FROM test";
-	$res = $pdo_conn->query($sql);
+	$res = $pdo->query($sql);
 	foreach( $res as $value ) {
 		echo "$value[name] $value[id] <br>";
 	}
