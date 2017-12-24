@@ -23,6 +23,7 @@
 		$res = $pdo->query($sql);
 		$list = "";
 		foreach ($data as $res) {
+			echo $data;
 			$list +=  $data['video_id']+" "+$data['video_title']+" "+$data['video_img_id']+" ";
 		}
     	echo $list
