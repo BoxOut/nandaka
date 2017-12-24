@@ -94,21 +94,24 @@
         var id = e.currentTarget.getAttribute('value'), 
         video_id = list[id]['snippet']['resourceId']['videoId'];
         video_img_id = list[id]["snippet"]["thumbnails"]["medium"]["url"],
-        add_video_to_db(video_id,video_img_id);
+        video_title = list[id]["title"];
+        add_video_to_db(video_id,video_title,video_img_id);
       }
 
-      function add_video_to_db(video_id,video_img_id) {
+      function add_video_to_db(video_id,video_title,video_img_id) {
         console.log("add_video",video_id,video_img_id);
         $.ajax({
-            url: 'test.php',
+            url: 'database_handler.php',
             type: 'POST',
             data: {
+             'op_tyoe': 'add',
              'video_id': video_id,
+             'video_title',video_title,
              'img_id': video_img_id
             }
         })
         .done(function (response) {
-            console.log(response)
+            console.log(response.list)
         });
       }
 
@@ -183,8 +186,7 @@
               <a href={video_url+data["snippet"]['resourceId']['videoId']} target={"_blank"} title={title_o}>
               <p className={"image2"}><img src={img_url} alt="video_thumb"  width={200} height={150} /></p>
               <p className={"caption2"}>{title_cut}</p></a>
-              <div className="play" id={index} onClick={self.playVideo}>play</div>
-              <div value={index} onClick={add_video}>add</div>
+              <div className="play" id={index} onClick={self.playVideo}>play</div><div value={index} onClick={add_video}>add</div>
               </div>
             );
           });
