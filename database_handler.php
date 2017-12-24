@@ -22,7 +22,7 @@
 		$sql = "SELECT * FROM playlist";
 		$res = $pdo->query($sql);
 		$list = "";
-		foreach ($data as $res) {
+		foreach ($res as $data) {
 			echo $data;
 			$list +=  $data['video_id']+" "+$data['video_title']+" "+$data['video_img_id']+" ";
 		}
