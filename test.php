@@ -17,5 +17,4 @@
 	foreach( $res as $value ) {
 		echo "$value[name] $value[id] <br>";
 	}
-
 ?>
