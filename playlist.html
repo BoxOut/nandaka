@@ -44,7 +44,7 @@
             {
               width: 740, // プレーヤーの幅
               height: 500, // プレーヤーの高さ
-              videoId: list[current_num]['snippet']['resourceId']['videoId'],
+              videoId: list[current_num]['video_id'],
               events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -53,7 +53,7 @@
           );
         }
         else {
-          ytPlayer.loadVideoById(list[current_num]['snippet']['resourceId']['videoId'],0);
+          ytPlayer.loadVideoById(list[current_num]['videoId'],0);
         }
 
         function nextVideoProcess(){
@@ -61,9 +61,9 @@
           if( add_value > 0 ) current_num++;
           else current_num--;
           if( current_num == list.length ){
-            if(list["nextPageToken"]){
+            {/*if(list["nextPageToken"]){
               time = 2000;
-            }
+            }*/}
             current_num = 0;
           }
           else if(current_num < 0) {
@@ -71,8 +71,7 @@
           }
           setTimeout(function() {
             console.log(list[current_num]);
-            ytPlayer.loadVideoById(list[current_num]['snippet']['resourceId']['videoId'], 0);
-          }, time);
+            ytPlayer.loadVideoById(list[current_num]['video_id'];
         }
 
         function onPlayerStateChange(event){
@@ -90,22 +89,6 @@
         }
       }
 
-      function get_list() {
- {/*       $.ajax({
-            url: 'database_handler.php',
-            type: 'POST',
-            data: {
-             'op_type': 'get_list'
-            }
-        })
-        .done(function (response) {
-            list = JSON.parse(response);
-        })
-        .success(function(data, dataType) {
-
-        });*/}
-      }
-
        // 親：<Parent />の定義
       var Parent = React.createClass({
          // State（※状態は親が管理）
@@ -117,7 +100,6 @@
 
         componentDidMount: function () {
           console.log("componentDitMount");
-          {/*this.api_call();*/}
           const self = this;
           $.ajax({
             url: 'database_handler.php',

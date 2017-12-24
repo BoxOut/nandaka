@@ -15,7 +15,6 @@
 		$stmt = $pdo->prepare('insert into playlist VALUES (?, ?, ?)');
 		$stmt->bindValue(1, $_POST['video_id']);
 		$stmt->bindValue(2, $_POST['video_title']);
-		$stmt->bindValue(3, $_POST['img_id']);
 		$stmt->execute();
 	}
 	else {

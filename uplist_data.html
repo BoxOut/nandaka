@@ -93,13 +93,12 @@
       function add_video(e){
         var id = e.currentTarget.getAttribute('value'), 
         video_id = list[id]['snippet']['resourceId']['videoId'];
-        video_img_id = list[id]["snippet"]["thumbnails"]["medium"]["url"],
         video_title = list[id]["snippet"]["title"];
-        add_video_to_db(video_id,video_title,video_img_id);
+        add_video_to_db(video_id,video_title);
       }
 
-      function add_video_to_db(video_id,video_title,video_img_id) {
-        console.log("add_video",video_id,video_img_id,video_title);
+      function add_video_to_db(video_id,video_title) {
+        console.log("add_video",video_id,video_title);
         $.ajax({
             url: 'database_handler.php',
             type: 'POST',
@@ -107,7 +106,6 @@
              'op_type': 'add',
              'video_id': video_id,
              'video_title': video_title,
-             'img_id': video_img_id
             }
         })
         .done(function (response) {
