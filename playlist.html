@@ -99,9 +99,7 @@
             }
         })
         .done(function (response) {
-            console.log(response[0]['video_title']);
-            console.log(response[1]['video_title']);
-            console.log(response[2]['video_title']);
+            console.log(JSON.parse(response));
         });
       }
 
