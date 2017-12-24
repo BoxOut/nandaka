@@ -149,9 +149,9 @@
         render: function() {
           const self = this;
           const videos = this.state.list.map( function(data, index){
-          	
+          	console.log(data)
             const video_url="https://www.youtube.com/watch?v=";
-            var img_url="https://i.ytimg.com/vi/+"data['video_id']"+/mqdefault.jpg",
+            var img_url="https://i.ytimg.com/vi/"+data['video_id']+"/mqdefault.jpg",
               title_o=data["video_title"],title_cut = title_o;
             if(title_o.length > 30) title_cut = title_o.slice(0,30);
 
