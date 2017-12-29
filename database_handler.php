@@ -18,6 +18,7 @@
 		$stmt->execute();
 	}
 	elseif ($_POST['op_type']=='delete_video_data') {
+		echo $_POST['video_id'];
 		$stmt = $pdo->prepare('delete from playlist where video_id = ?');
 		$stmt->bindValue(1, $_POST['video_id']);
 		$stmt->execute();
