@@ -116,7 +116,8 @@
         },
 
         deleteData: function (e) {
-          var video_id = e.currentTarget.getAttribute('video_id'); 
+          var video_id = e.currentTarget.getAttribute('video_id');
+          console.log("del",video_id) 
           $.ajax({
             url: 'database_handler.php',
             type: 'POST',
@@ -154,7 +155,7 @@
               <p className={"image2"}><img src={img_url} alt="video_thumb"  width={200} height={150} /></p>
               <p className={"caption2"}>{title_cut}</p></a>
               <div className="play" id={index} onClick={self.playVideo}>play</div>
-              <span video_id={data['video_id']} onClick={self.deleteData}>&nbsp;delete</span>
+              <span video_id={data['video_id']} onClick={self.deleteData}> delete</span>
               </div>
             );
           });
