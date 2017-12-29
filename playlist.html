@@ -154,8 +154,8 @@
               <a href={video_url+data['video_id']} target={"_blank"} title={title_o}>
               <p className={"image2"}><img src={img_url} alt="video_thumb"  width={200} height={150} /></p>
               <p className={"caption2"}>{title_cut}</p></a>
-              <div className="play" id={index} onClick={self.playVideo}>play</div>
-              <span value={data['video_id']} onClick={self.deleteData}> delete</span>
+              <span className="play" id={index} onClick={self.playVideo}>play</span>
+              <span value={data['video_id']} onClick={self.deleteData}>&nbsp;&nbsp;&nbsp;delete</span>
               </div>
             );
           });
