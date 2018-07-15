@@ -84,8 +84,10 @@
           }
           console.log(event.data);
           var quality = ytPlayer.getAvailableQualityLevels()[0];
-          if(quality)
+          if(quality) {
             ytPlayer.setPlaybackQuality(quality);
+            console.log(quality);
+          }
         }
 
         function onPlaybackQualityChange(event) {
