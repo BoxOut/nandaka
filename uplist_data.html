@@ -76,9 +76,15 @@
         }
 
         function onPlayerStateChange(event){
-          if(event.data == YT.PlayerState.ENDED){
-            console.log("video end");
-            nextVideoProcess();
+          switch(event.data) {
+            case YT.PlayerState.ENDED:
+              console.log("video end");
+              nextVideoProcess();
+              break;
+            case -1:
+              console.log("video loaded");
+              player.setPlaybackQuality("hd1080"):
+              break;
           }
         }
         function onPlayerReady(event) {
@@ -185,7 +191,7 @@
               <p className={"image2"}><img src={img_url} alt="video_thumb"  width={200} height={150} /></p>
               <p className={"caption2"}>{title_cut}</p></a>
               <span className="play" id={index} onClick={self.playVideo}>play</span>
-              <span value={index} onClick={add_video}> add</span>
+              <span value={index} onClick={add_video}>&nbsp;&nbsp;&nbsp;add</span>
               </div>
             );
           });
