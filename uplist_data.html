@@ -81,11 +81,10 @@
               console.log("video end");
               nextVideoProcess();
               break;
-            case -1:
-              console.log("video loaded");
-              ytPlayer.setPlaybackQuality("hd1080");
-              break;
           }
+          console.log(event.data);
+          ytPlayer.setPlaybackQuality("hd1080");
+
         }
 
         function onPlaybackQualityChange(event) {
