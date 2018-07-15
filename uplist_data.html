@@ -87,6 +87,11 @@
               break;
           }
         }
+
+        function onPlaybackQualityChange(event) {
+          console.log("quality chnage");
+          console.log(event.data);
+        }
         function onPlayerReady(event) {
           event.target.playVideo();
         }
