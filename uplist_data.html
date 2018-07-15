@@ -82,9 +82,8 @@
               nextVideoProcess();
               break;
           }
-          console.log(event.data);
+          console.log(event.data,ytPlayer.getAvailableQualityLevels());
           ytPlayer.setPlaybackQuality("hd1080");
-
         }
 
         function onPlaybackQualityChange(event) {
